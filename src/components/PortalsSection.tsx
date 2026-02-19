@@ -15,7 +15,9 @@ const portals = [
         text: 'text-[#6AB2E7]',
         hoverBg: 'hover:bg-[#6AB2E7]',
         borderColor: 'border-[#6AB2E7]',
-        linkText: 'Accéder à l\'espace Startup'
+        linkText: 'Accéder à l\'espace Startup',
+        linkUrl: '/startup',
+        target: '_blank'
     },
     {
         id: 'guichet',
@@ -30,7 +32,9 @@ const portals = [
         text: 'text-[#12AD2B]',
         hoverBg: 'hover:bg-[#12AD2B]',
         borderColor: 'border-[#12AD2B]',
-        linkText: 'Accéder au Guichet'
+        linkText: 'Accéder au Guichet',
+        linkUrl: '/guichet',
+        target: '_blank'
     },
     {
         id: 'g2b',
@@ -40,12 +44,14 @@ const portals = [
         description: 'Une suite d\'outils dédiés aux MPME pour accéder aux marchés publics, gérer la fiscalité et développer l\'export.',
         features: ['Accès aux appels d\'offres', 'Gestion fiscale simplifiée', 'Formations & Outils numériques'],
         icon: TrendingUp,
-        color: '#D7141A', // Red
-        bg: 'bg-[#D7141A]/10',
-        text: 'text-[#D7141A]',
-        hoverBg: 'hover:bg-[#D7141A]',
-        borderColor: 'border-[#D7141A]',
-        linkText: 'Espace Entreprises'
+        color: '#990A0F', // Red
+        bg: 'bg-[#990A0F]/10',
+        text: 'text-[#990A0F]',
+        hoverBg: 'hover:bg-[#990A0F]',
+        borderColor: 'border-[#990A0F]',
+        linkText: 'Espace Entreprises',
+        linkUrl: '/g2b',
+        target: '_blank'
     }
 ];
 
@@ -118,7 +124,8 @@ const PortalsSection: React.FC = () => {
 
                             {/* Button */}
                             <a
-                                href="#"
+                                href={portal.linkUrl || '#'}
+                                target={portal.target || '_self'}
                                 className={`w-full py-4 px-6 rounded-xl flex items-center justify-between font-bold text-sm transition-all duration-300 group/btn border ${portal.bg} ${portal.text} ${portal.borderColor} ${portal.hoverBg} hover:text-white hover:border-transparent`}
                             >
                                 <span>{portal.linkText}</span>
