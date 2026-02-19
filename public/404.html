@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée - Redirection...</title>
+    <script>
+        // Simple redirect to root for SPA support on static hosting
+        // Preserves the path in a query parameter if complex handling is needed later,
+        // but primarily returns user to the app entry point.
+        const path = window.location.pathname;
+        window.location.replace('/?redirect=' + encodeURIComponent(path));
+    </script>
+</head>
+<body>
+    <p>Redirection vers la page d'accueil...</p>
+</body>
+</html>

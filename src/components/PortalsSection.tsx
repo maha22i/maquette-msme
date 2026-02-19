@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Rocket, Building2, TrendingUp, ArrowRight, CheckCircle2, Globe2 } from 'lucide-react';
 
 const portals = [
@@ -123,14 +124,13 @@ const PortalsSection: React.FC = () => {
                             </ul>
 
                             {/* Button */}
-                            <a
-                                href={portal.linkUrl || '#'}
-                                target={portal.target || '_self'}
+                            <Link
+                                to={portal.linkUrl || '#'}
                                 className={`w-full py-4 px-6 rounded-xl flex items-center justify-between font-bold text-sm transition-all duration-300 group/btn border ${portal.bg} ${portal.text} ${portal.borderColor} ${portal.hoverBg} hover:text-white hover:border-transparent`}
                             >
                                 <span>{portal.linkText}</span>
                                 <ArrowRight size={18} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-                            </a>
+                            </Link>
                         </div>
                     ))}
                 </div>
